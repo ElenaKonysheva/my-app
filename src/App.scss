@@ -1,0 +1,73 @@
+$main-color:#F16D7F;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+header {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 10px;
+    margin-bottom: 30px;
+    background-color: $main-color;
+    color: #fff;
+}
+
+.container {
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    p {
+        font-size: 20px;
+        text-align: left;
+        color: blueviolet;
+    }
+
+    button {
+        padding: 10px;
+        margin-right: 40px;
+        margin-top: 20px;
+        color: white;
+        border: none;
+        background-color: $main-color;
+        transition: all 2s;
+        cursor: pointer;
+    }
+
+    button:active {
+        transform: scale(0.8);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 360px;
+    }
+
+    input {
+        height: 60px;
+        width: 25vh;
+        margin-top: 20px;
+        margin-right: 40px;
+    }
+
+    select {
+        margin-bottom: 30px;
+    }
+}
+
+.message {
+    width: 25vh;
+    height: auto;
+    margin-top: 10px;
+    border: 1px solid goldenrod;
+    padding: 10px;
+}
