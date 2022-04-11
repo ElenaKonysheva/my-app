@@ -2,6 +2,10 @@
   "name": "newapp",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
+=======
+  "homepage": " https://elenakonysheva.github.io/my-app/",
+>>>>>>> lesson1
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
@@ -16,7 +20,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+<<<<<<< HEAD
     "eject": "react-scripts eject"
+=======
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+>>>>>>> lesson1
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +45,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
   }
 }
+=======
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
+>>>>>>> lesson1

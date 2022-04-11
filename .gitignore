@@ -2,6 +2,10 @@
 
 # dependencies
 /node_modules
+<<<<<<< HEAD
+=======
+/build
+>>>>>>> lesson1
 /.pnp
 .pnp.js
 
