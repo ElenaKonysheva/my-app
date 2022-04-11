@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Messages } from './componentFunc/Messages';
-import { Header } from './componentFunc/Header';
+import { Messages } from './componentClass/Messages';
+import { Header } from './componentClass/Header';
 import './App.scss';
 
 export class App extends Component {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { InputText } from './InputText';
 import { InputName } from './InputName';
 import { Button } from './Button';
-import { CheckedForm } from './Check';
+import { CheckedForm } from './CheckedForm';
 
 export class Messages extends Component {
     state = {

@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Header = () => {
     return <header>
         <h1>my-app</h1>
