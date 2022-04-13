@@ -5,10 +5,11 @@ import './App.scss';
 
 export class App extends Component {
   render() {
-    return <>
-      <Header />
-      <Messages />
-    </>
+    return (
+      <>
+        <Header />
+        <Messages />
+      </>
+    );
   }
 }
-
