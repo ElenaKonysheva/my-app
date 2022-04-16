@@ -1,41 +1,57 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { InputText } from './InputText';
-import { InputName } from './InputName';
 import { Button } from './Button';
-import { CheckedForm } from './CheckedForm';
-
+import { MessageList } from './MessageList';
+import { NAME } from '../constans';
 export const Messages = () => {
-  const [name, setName] = useState('');
-  const [value, setText] = useState('');
-  const [messages, setMessages] = useState('');
-
-  const handleClickShow = () => {
-    setMessages(value);
+  const [textMessage, setText] = useState('');
+  const [messages, setMessages] = useState([]);
+  const addMessageHandler = (ev) => {
+    let newMessage = {
+      id: Math.floor(Math.random() * 10000) + 1,
+      name: NAME.USER,
+      value: textMessage,
+      timestamp: new Date(),
+    };
+    ev.preventDefault();
+    setMessages([...messages, newMessage]);
   };
-  const handleClickDelete = () => {
+  const handleClickDelete = (ev) => {
+    ev.preventDefault();
     setText('');
-    setName('');
-    setMessages('');
   };
-
+  useEffect(() => {
+    if (
+      messages.length > 0 &&
+      messages[messages.length - 1].name !== NAME.BOT
+    ) {
+      const timeout = setTimeout(() => {
+        setMessages([
+          ...messages,
+          {
+            id: Math.floor(Math.random() * 10000) + 1,
+            name: NAME.BOT,
+            value: 'hi how i can help you',
+            timestamp: new Date(),
+          },
+        ]);
+      }, 1500);
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, [messages]);
   const handleChangeText = (ev) => {
     setText(ev.target.value);
   };
-
-  const handleChangeName = (ev) => {
-    setName(ev.target.value);
-  };
-
   return (
     <div className="container">
-      <CheckedForm />
-      <p>Почему вы ее любите</p>
-      <InputName changeName={handleChangeName} name={name} />
-      <InputText value={value} changeText={handleChangeText} />
+      <InputText value={textMessage} changeText={handleChangeText} />
       <br />
-      <Button click={handleClickShow} clickDelete={handleClickDelete} />
-      <p> Сообщение от {name}</p>
-      <div className="message">{messages}</div>
+      <form action="#" onSubmit={addMessageHandler}>
+        <MessageList messages={messages} />
+        <Button clickDelete={handleClickDelete} value={textMessage} />
+      </form>
     </div>
   );
 };

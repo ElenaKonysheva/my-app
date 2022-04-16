@@ -2,8 +2,12 @@ import React from 'react';
 export const Button = (props) => {
   return (
     <>
-      <button onClick={props.click}>показать</button>
-      <button onClick={props.clickDelete}>очистить</button>
+      <button type="submit" disabled={!props.value}>
+        отправить форму
+      </button>
+      <button onClick={props.clickDelete} type="reset">
+        очистить
+      </button>
     </>
   );
 };

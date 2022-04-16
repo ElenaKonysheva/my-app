@@ -1,11 +1,10 @@
 import React from 'react';
 export const InputText = (props) => {
   return (
-    <input
-      type="text"
+    <textarea
+      placeholder="write your message"
       onChange={props.changeText}
       value={props.value}
-      placeholder="введите ваше сообщение"
-    />
+    ></textarea>
   );
 };
