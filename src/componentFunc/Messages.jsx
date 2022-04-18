@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { InputText } from './InputText';
-import { Button } from './Button';
-import { MessageList } from './MessageList';
+import { InputText } from './Messages/InputText/InputText';
+import { Button } from './Messages/components/Button/Button';
+import { MessageList } from './Messages/components/MessageList';
 import { NAME } from '../constans';
 export const Messages = () => {
   const [textMessage, setText] = useState('');
@@ -50,7 +50,7 @@ export const Messages = () => {
       <br />
       <form action="#" onSubmit={addMessageHandler}>
         <MessageList messages={messages} />
-        <Button clickDelete={handleClickDelete} value={textMessage} />
+        <Button clickDelete={handleClickDelete} disabled={!textMessage} />
       </form>
     </div>
   );

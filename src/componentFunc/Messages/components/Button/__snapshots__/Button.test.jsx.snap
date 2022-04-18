@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button render with snapshot 1`] = `
+<DocumentFragment>
+  <button
+    type="submit"
+  >
+    отправить форму
+  </button>
+  <button
+    type="reset"
+  >
+    очистить
+  </button>
+</DocumentFragment>
+`;

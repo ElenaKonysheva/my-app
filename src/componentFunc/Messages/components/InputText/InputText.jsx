@@ -1,7 +1,7 @@
 import React from 'react';
 export const InputText = (props) => {
   return (
-    <textarea
+    <textarea data-testid="custom-element"
       placeholder="write your message"
       onChange={props.changeText}
       value={props.value}
