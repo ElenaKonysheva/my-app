@@ -5,7 +5,6 @@ $main-color:#F16D7F;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    list-style-type: none;
 }
 
 header {
@@ -28,7 +27,23 @@ header {
     p {
         font-size: 20px;
         text-align: left;
-        color: blueviolet;
+        color: white;
+    }
+    p:first-child {
+        font-size: 14px;
+        text-align: right;
+        color: white;
+        padding-bottom: 10px;
+    }
+    p:last-child {
+        font-size: 14px;
+        text-align: right;
+        color: white;
+        padding-top: 10px;
+    }
+    h2 {
+        text-align: left;
+        color: white;
     }
 
     button {
@@ -45,16 +60,18 @@ header {
     button:active {
         transform: scale(0.8);
     }
-
+    button:disabled{
+        background-color: gray;
+    }
     form {
         display: flex;
         flex-direction: column;
         width: 360px;
     }
 
-    input {
-        height: 60px;
-        width: 25vh;
+    textarea {
+        width: 50vh;
+        height: auto;
         margin-top: 20px;
         margin-right: 40px;
     }
@@ -65,9 +82,10 @@ header {
 }
 
 .message {
-    width: 25vh;
+    width: 50vh;
     height: auto;
-    margin-top: 10px;
-    border: 1px solid goldenrod;
+    justify-content: space-between;
     padding: 10px;
+    background-color: slategray;
+    margin-top: 10px;
 }

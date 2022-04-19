@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+
+header {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding: 10px;
+  margin-bottom: 30px;
+  background-color: #F16D7F;
+  color: #fff;
+}
+
+.container {
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.container p {
+  font-size: 20px;
+  text-align: left;
+  color: white;
+}
+
+.container p:first-child {
+  font-size: 14px;
+  text-align: right;
+  color: white;
+  padding-bottom: 10px;
+}
+
+.container p:last-child {
+  font-size: 14px;
+  text-align: right;
+  color: white;
+  padding-top: 10px;
+}
+
+.container h2 {
+  text-align: left;
+  color: white;
+}
+
+.container button {
+  padding: 10px;
+  margin-right: 40px;
+  margin-top: 20px;
+  color: white;
+  border: none;
+  background-color: #F16D7F;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  cursor: pointer;
+}
+
+.container button:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.container button:disabled {
+  background-color: gray;
+}
+
+.container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 360px;
+}
+
+.container textarea {
+  width: 50vh;
+  height: auto;
+  margin-top: 20px;
+  margin-right: 40px;
+}
+
+.container select {
+  margin-bottom: 30px;
+}
+
+.message {
+  width: 50vh;
+  height: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  background-color: slategray;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=App.css.map */

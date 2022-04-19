@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Messages } from './componentFunc/Messages';
 import { Header } from './componentFunc/Header';
 import './App.scss';
 
-export class App extends Component {
-  render() {
-    return <>
+export const App = () => {
+  return (
+    <>
       <Header />
       <Messages />
     </>
-  }
-}
-
+  );
+};

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputText render with snapshot 1`] = `
+<DocumentFragment>
+  <textarea
+    data-testid="custom-element"
+    placeholder="write your message"
+  />
+</DocumentFragment>
+`;
