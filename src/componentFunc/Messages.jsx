@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { InputText } from './Messages/components/InputText/InputText'
+import { InputText } from './Messages/components/InputText/InputText';
 import { Button } from './Messages/components/Button/Button';
 import { MessageList } from './Messages/components/MessageList';
 import { NAME } from '../constans';
