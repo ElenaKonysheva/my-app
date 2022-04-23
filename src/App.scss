@@ -57,9 +57,18 @@ header {
         flex-direction: column;
         width: 360px;
     }
+    input {
+        margin-top: 30px;
+        width: 100%;
+        height: 60px;
+    }
 
 }
+.forms {
+    display: flex;
+    justify-content: space-around;
 
+}
 .message {
     width: 50vh;
     height: auto;

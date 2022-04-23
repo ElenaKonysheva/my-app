@@ -1,8 +1,7 @@
-/* eslint-disable react/display-name */
-/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { useEffect, useState, memo } from 'react';
 import { InputText } from './Messages/components/InputText';
 import { Button } from './Messages/components/Button';
+import { Chatlist } from './Messages/components/Chatlist';
 import { MessageList } from './Messages/components/MessageList';
 import { nanoid } from 'nanoid';
 import { NAME } from '../constans';
@@ -29,6 +28,7 @@ export const Messages = memo(() => {
   const handleClickDelete = () => {
     setText('');
   };
+
   useEffect(() => {
     if (
       messages.length > 0 &&
@@ -55,13 +55,13 @@ export const Messages = memo(() => {
   };
 
   return (
-    <div className="container">
-      <InputText value={textMessage} changeText={handleChangeText} />
-      <br />
+    <div className="container forms">
       <form action="#" onSubmit={addMessageHandler}>
+        <InputText value={textMessage} changeText={handleChangeText} />
         <MessageList messages={messages} />
         <Button clickDelete={handleClickDelete} disabled={!textMessage} />
       </form>
+      <Chatlist />
     </div>
   );
 });

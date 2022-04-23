@@ -22,6 +22,7 @@ export const InputText = (props: {
         placeholder={'write your message'}
         onChange={props.changeText}
         value={props.value}
+        defaultValue="Untitled"
         id="input-with-icon-textfield"
         label="TextField"
         InputProps={{
