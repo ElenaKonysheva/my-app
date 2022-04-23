@@ -3,11 +3,13 @@
 exports[`Button render with snapshot 1`] = `
 <DocumentFragment>
   <button
+    class="button"
     type="submit"
   >
     отправить форму
   </button>
   <button
+    class="button"
     type="reset"
   >
     очистить
