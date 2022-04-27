@@ -1,62 +1,65 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-  entry: path.resolve(__dirname, './src/index.jsx'),
+  entry: path.resolve(__dirname, './src/index.tsx'),
   output: {
     filename: './bundle.js',
     path: path.resolve(__dirname, './build'),
   },
   resolve: {
-    extensions: ['.jsx', '.js'],
+    extensions: ['.jsx', '.js', '.tsx', '.ts'],
   },
   devtool: 'eval-source-map',
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(j|t)sx?$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
       {
-        test: /\.css$/i,
-        exclude: /node_modules/,
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
+            loader: 'file-loader',
           },
         ],
       },
       {
-        test: /\.s[ac]ss$/i,
-        exclude: /node_modules/,
+        test: /\.(css|scss|sass)$/i,
+        exclude: /\.module.(css|scss|sass)$/i,
         use: [
-          {
-            loader: 'style-loader',
-          },
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
+              modules: {
+                mode: 'icss',
+                localIdentName: '[name]___[hash:base64:5]',
+              },
             },
           },
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.module.(css|scss|sass)$/i,
+        use: [
+          'style-loader',
           {
-            loader: 'sass-loader',
+            loader: 'css-loader',
             options: {
-              sourceMap: true,
+              importLoaders: 3,
+              modules: {
+                mode: 'local',
+                localIdentName: '[name]___[hash:base64:5]',
+              },
             },
           },
+          'sass-loader',
         ],
       },
     ],

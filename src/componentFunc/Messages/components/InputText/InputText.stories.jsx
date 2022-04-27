@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { InputText } from './InputText';
 
 export default {
@@ -9,7 +8,7 @@ export default {
     changeText: { action: 'change' },
   },
 };
-
+// не смогла переделать в typescript там надо передавать placeholder так чтобы он был в прототипе но я не поняла как
 const Template = (args) => <InputText {...args} />;
 
 export const Primary = Template.bind({});

@@ -1,0 +1,17 @@
+
+.button {
+    padding: 10px;
+    margin-right: 40px;
+    margin-top: 20px;
+    color: white;
+    border: none;
+    background-color: #F16D7F;
+    transition: all 2s; 
+}
+
+.button:active {
+    transform: scale(0.8);
+}
+.button:disabled{
+    background-color: gray;
+}
