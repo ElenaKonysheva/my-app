@@ -4,10 +4,10 @@ import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 interface InputTextProps {
-  changeText:
+  changeText?:
     | React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
     | (() => void);
-  value: string;
+  value?: string;
 }
 export const InputText: FC<InputTextProps> = (props) => {
   return (
