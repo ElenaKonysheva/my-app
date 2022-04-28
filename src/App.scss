@@ -15,12 +15,20 @@ header {
 .header {
     height: inherit;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     color: #fff;
     img{
         width: 40px;
         height: auto;
+    }
+    ul {
+        display: flex;
+        justify-content: start;
+      
+    li {
+        margin-left: 30px;
+    }
     }
 }
 
@@ -66,8 +74,7 @@ header {
 }
 .forms {
     display: flex;
-    justify-content: space-around;
-
+    justify-content: space-between;
 }
 .message {
     width: 50vh;

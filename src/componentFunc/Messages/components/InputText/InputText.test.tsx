@@ -2,6 +2,7 @@
 import React from 'react';
 import { InputText } from './InputText';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import '@babel/plugin-transform-runtime';
 
@@ -50,5 +51,13 @@ describe('InputText', () => {
       />
     );
     expect(screen.getByTestId('custom-element')).toBeInTheDocument();
+  });
+  it('input value ', async () => {
+    await userEvent.type(screen.getByTestId('custom-element'), 'test');
+    expect(screen.getByTestId('custom-element')).toHaveValue('test');
+  });
+  it('input value ', async () => {
+    await userEvent.type(screen.getByTestId('custom-element'), '123');
+    expect(screen.getByTestId('custom-element')).toHaveValue('123');
   });
 });

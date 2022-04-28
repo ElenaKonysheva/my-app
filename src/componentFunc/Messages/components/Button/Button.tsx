@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import style from './Button.module.css';
-// import PropTypes from 'prop-types';
 interface ButtonProps {
   disabled: boolean;
   clickDelete: () => void;
@@ -17,7 +16,3 @@ export const Button: FC<ButtonProps> = (props) => {
     </>
   );
 };
-// Button.propTypes = {
-//   clickDelete: PropTypes.func,
-//   disabled: PropTypes.bool,
-// };

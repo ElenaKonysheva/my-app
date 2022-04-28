@@ -4,7 +4,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@babel/plugin-transform-runtime';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
-import { waitFor } from '@storybook/testing-library';
 
 describe('Button', () => {
   it('render component', () => {
@@ -86,8 +85,7 @@ describe('Button', () => {
         disabled={false}
       />
     );
-    userEvent.click(screen.getByText(/очистить/i));
-
-    await waitFor(() => expect(handleClick).toHaveBeenCalledTimes(1));
+    await userEvent.click(screen.getByText(/очистить/i));
+    expect(handleClick).toHaveBeenCalledTimes(1);
   });
 });
