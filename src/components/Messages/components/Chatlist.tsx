@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { nanoid } from 'nanoid';
 import { Link } from 'react-router-dom';
-import style from './Button/Button.module.css';
+import './Button/Button.css';
 import { Chat } from '../../../App';
 interface ChatlistProps {
   chatList: Chat[];
@@ -40,7 +40,7 @@ export const Chatlist: FC<ChatlistProps> = ({
           onChange={(e) => setName(e.target.value)}
         />
         <br />
-        <button type="submit" className={style.button} disabled={!name}>
+        <button type="submit" disabled={!name}>
           добавить чат
         </button>
       </form>

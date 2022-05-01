@@ -1,12 +1,14 @@
 import React, { FC, useState, useEffect } from 'react';
-import { Chat, Messages } from '../App';
-import { Button } from '../componentFunc/Messages/components/Button';
-import { Chatlist } from '../componentFunc/Messages/components/Chatlist';
-import { InputText } from '../componentFunc/Messages/components/InputText';
-import { MessageList } from '../componentFunc/Messages/components/MessageList';
+import { Chat, Messages } from '../../App';
+import { Button } from '../../components/Messages/components/Button';
+import { Chatlist } from '../../components/Messages/components/Chatlist';
+import { InputText } from '../../components/Messages/components/InputText';
+import { MessageList } from '../../components/Messages/components/MessageList';
 import { nanoid } from 'nanoid';
-import { NAME } from '../constans';
+import { NAME } from '../../constans';
 import { Navigate, useParams } from 'react-router-dom';
+import { withClasses } from '../../HOC/withclasses';
+import style from './chats.module.css';
 
 interface ChatsProps {
   messages: Messages;
@@ -23,7 +25,7 @@ export const Chats: FC<ChatsProps> = ({
   deleteChat,
 }) => {
   const { chatId } = useParams();
-  console.log('chatId', chatId);
+  const MessageListWithClasses = withClasses(MessageList);
   const [textMessage, setText] = useState('');
   const addMessageHandler = (ev: React.FormEvent<HTMLFormElement>) => {
     const newMessage = {
@@ -80,7 +82,10 @@ export const Chats: FC<ChatsProps> = ({
       <Chatlist chatList={chatList} addChat={addChat} deleteChat={deleteChat} />
       <form action="#" onSubmit={addMessageHandler}>
         <InputText value={textMessage} changeText={handleChangeText} />
-        <MessageList messages={chatId ? messages[chatId] : []} />
+        <MessageListWithClasses
+          messages={chatId ? messages[chatId] : []}
+          classes={style.background}
+        />
         <Button clickDelete={handleClickDelete} disabled={!textMessage} />
       </form>
     </div>
