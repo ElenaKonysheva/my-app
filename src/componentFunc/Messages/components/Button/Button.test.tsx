@@ -8,68 +8,34 @@ import { waitFor } from '@storybook/testing-library';
 
 describe('Button', () => {
   it('render component', () => {
-    render(
-      <Button
-        disabled={false}
-        clickDelete={function (): void {
-          throw new Error('Function not implemented.');
-        }}
-      />
-    );
+    const clickDelete = jest.fn();
+    render(<Button disabled={false} clickDelete={clickDelete} />);
   });
   it('render with snapshot', () => {
+    const clickDelete = jest.fn();
     const { asFragment } = render(
-      <Button
-        disabled={false}
-        clickDelete={function (): void {
-          throw new Error('Function not implemented.');
-        }}
-      />
+      <Button disabled={false} clickDelete={clickDelete} />
     );
     expect(asFragment()).toMatchSnapshot();
   });
   it('render with text', () => {
-    render(
-      <Button
-        disabled={false}
-        clickDelete={function (): void {
-          throw new Error('Function not implemented.');
-        }}
-      />
-    );
+    const clickDelete = jest.fn();
+    render(<Button disabled={false} clickDelete={clickDelete} />);
     expect(screen.getByText(/отправить форму/)).toBeInTheDocument();
   });
   it('render with text', () => {
-    render(
-      <Button
-        disabled={false}
-        clickDelete={function (): void {
-          throw new Error('Function not implemented.');
-        }}
-      />
-    );
+    const clickDelete = jest.fn();
+    render(<Button disabled={false} clickDelete={clickDelete} />);
     expect(screen.getByText(/очистить/)).toBeInTheDocument();
   });
   it('render myltiply components', () => {
-    render(
-      <Button
-        disabled={false}
-        clickDelete={function (): void {
-          throw new Error('Function not implemented.');
-        }}
-      />
-    );
+    const clickDelete = jest.fn();
+    render(<Button disabled={false} clickDelete={clickDelete} />);
     expect(screen.queryAllByRole('button').length).toBe(2);
   });
   it('button is disabled', () => {
-    render(
-      <Button
-        disabled
-        clickDelete={function (): void {
-          throw new Error('Function not implemented.');
-        }}
-      />
-    );
+    const clickDelete = jest.fn();
+    render(<Button clickDelete={clickDelete} disabled />);
     expect(screen.getByText(/отправить форму/)).toBeDisabled();
   });
   it('button click with fireEvent', () => {
@@ -86,8 +52,9 @@ describe('Button', () => {
         disabled={false}
       />
     );
-    userEvent.click(screen.getByText(/очистить/i));
-
-    await waitFor(() => expect(handleClick).toHaveBeenCalledTimes(1));
+    await userEvent.click(screen.getByText(/очистить/i));
+    await waitFor(() => expect(handleClick).toHaveBeenCalledTimes(1), {
+      timeout: 1100,
+    });
   });
 });

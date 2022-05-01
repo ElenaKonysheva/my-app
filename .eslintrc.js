@@ -41,7 +41,7 @@ module.exports = {
     {
       files: ['webpack.config.js'],
       rules: {
-        '@typescript-estlint/no-var-requires': ['off'],
+        '@typescript-estlint/no-var-requires': 'off',
       },
     },
   ],

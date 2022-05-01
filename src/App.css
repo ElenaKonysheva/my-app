@@ -10,19 +10,26 @@ header {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
+  height: 100px;
+  background-color: #F16D7F;
+}
+
+.header {
+  height: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  padding: 10px;
-  margin-bottom: 30px;
-  background-color: #F16D7F;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #fff;
+}
+
+.header img {
+  width: 40px;
+  height: auto;
 }
 
 .container {
@@ -56,27 +63,6 @@ header {
   color: white;
 }
 
-.container button {
-  padding: 10px;
-  margin-right: 40px;
-  margin-top: 20px;
-  color: white;
-  border: none;
-  background-color: #F16D7F;
-  -webkit-transition: all 2s;
-  transition: all 2s;
-  cursor: pointer;
-}
-
-.container button:active {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-}
-
-.container button:disabled {
-  background-color: gray;
-}
-
 .container form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -88,15 +74,19 @@ header {
   width: 360px;
 }
 
-.container textarea {
-  width: 50vh;
-  height: auto;
-  margin-top: 20px;
-  margin-right: 40px;
+.container input {
+  margin-top: 30px;
+  width: 100%;
+  height: 60px;
 }
 
-.container select {
-  margin-bottom: 30px;
+.forms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .message {

@@ -7,6 +7,7 @@
     "start": "webpack serve --mode=development",
     "build": "webpack --mode=production",
     "lint": "npx tsc --noEmit && npx eslint ./src --ext .js,.jsx,.ts,.tsx --fix",
+    "deploy:web": "npm run build && h-pages -d build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "storybook": "start-storybook -p 6006",
@@ -26,6 +27,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0",
     "sass": "^1.50.0",
     "sass-loader": "^12.6.0"
   },
