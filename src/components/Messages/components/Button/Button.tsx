@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import style from './Button.module.css';
+import './Button.css';
 interface ButtonProps {
   disabled: boolean;
   clickDelete: () => void;
@@ -7,10 +7,10 @@ interface ButtonProps {
 export const Button: FC<ButtonProps> = (props) => {
   return (
     <>
-      <button type="submit" disabled={props.disabled} className={style.button}>
+      <button type="submit" disabled={props.disabled}>
         отправить форму
       </button>
-      <button onClick={props.clickDelete} type="reset" className={style.button}>
+      <button onClick={props.clickDelete} type="reset">
         очистить
       </button>
     </>

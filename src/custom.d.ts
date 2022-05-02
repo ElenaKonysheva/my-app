@@ -1,5 +1,8 @@
-declare module '*.jpg';
-declare module '*.png';
-declare module '*.jpeg';
-declare module '*module.scss';
-declare module '*module.css';
+import { compose } from 'redux';
+
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
+export {};

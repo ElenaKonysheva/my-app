@@ -1,5 +1,5 @@
 
-.button {
+button {
     padding: 10px;
     margin-right: 40px;
     margin-top: 20px;
@@ -9,9 +9,9 @@
     transition: all 2s; 
 }
 
-.button:active {
+button:active {
     transform: scale(0.8);
 }
-.button:disabled{
+button:disabled{
     background-color: gray;
 }
