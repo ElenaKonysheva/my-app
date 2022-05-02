@@ -4,7 +4,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@babel/plugin-transform-runtime';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
-import { waitFor } from '@storybook/testing-library';
 
 describe('Button', () => {
   it('render component', () => {
