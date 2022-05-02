@@ -48,7 +48,7 @@ export const Chats: FC = () => {
   const addMessage = (ev: React.FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
     if (chatId) {
-      dispatch(addMessageHandler(chatId, newMessage));
+      // dispatch(addMessageHandler(chatId, newMessage));
     }
   };
 
